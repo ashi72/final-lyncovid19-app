@@ -46,7 +46,7 @@ router.post('/login', (req, res) => {
           message: "This user does not exist!"
         })
       }
-      return res.status(200).send(user.google_url);
+      return res.status(200).send(user);
     })
   })
 })
