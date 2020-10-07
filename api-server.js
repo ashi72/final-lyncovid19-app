@@ -19,6 +19,7 @@ const port = process.env.PORT || 5000;
 // const issuer = process.env.REACT_APP_AUTH0_DOMAIN;
 
 const appOrigin = 'http://localhost:3000'
+
 const audience = 'https://covid19-lynbrook/'
 const issuer = 'https://dev-kzr1audd.us.auth0.com/'
 //
@@ -31,6 +32,13 @@ if (!issuer || !audience) {
 }
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, OPTIONS, DELETE');
+  next();
+});
 
 app.use(morgan("dev"));
 app.use(helmet());
