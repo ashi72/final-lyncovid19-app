@@ -18,9 +18,9 @@ const port = process.env.PORT || 5000;
 // const audience = process.env.REACT_APP_AUDIENCE;
 // const issuer = process.env.REACT_APP_AUTH0_DOMAIN;
 
-const appOrigin = 'http://localhost:3000'
+const appOrigin = 'https://lyncovid19-frontend-vercel.vercel.app/'
 
-const audience = 'https://covid19-lynbrook/'
+const audience = 'https://lynbrook-covid19-backend-api/'
 const issuer = 'https://dev-kzr1audd.us.auth0.com/'
 //
 

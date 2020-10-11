@@ -7,7 +7,7 @@ router.post('/login', (req, res) => {
   console.log('I hit the endpoint')
   User.findOne({email: req.body.email}).then(user => {
     if (user) {
-      return res.status(404).send({
+      return res.status(400).send({
         message: "This user already exists"
       });
     } else {
