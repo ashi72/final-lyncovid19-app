@@ -17,6 +17,7 @@ const bodyParser = require('body-parser');
 //// NOTE:
 // need to login before geturl works
 
+const app = express();
 const port = process.env.PORT || 7000;
 
 //removed .env file contents
@@ -39,7 +40,6 @@ const port = process.env.PORT || 7000;
 // const audience = 'https://lynbrook-covid19-backend-api'
 // const issuer = 'https://dev-kzr1audd.us.auth0.com/'
 
-const app = express();
 
 
 // if (!issuer || !audience) {
@@ -57,7 +57,7 @@ app.use(function (req, res, next) {
 
 app.use(morgan("dev"));
 app.use(helmet());
-app.use(cors({ origin: appOrigin }));
+// app.use(cors({ origin: appOrigin }));
 connectDB();
 // const checkJwt = jwt({
 //   secret: jwksRsa.expressJwtSecret({
